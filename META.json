@@ -42,9 +42,7 @@
       "runtime" : {
          "requires" : {
             "Dancer2" : "0",
-            "Feature::Compat::Try" : "0",
             "OpenTelemetry" : "0.019",
-            "Syntax::Keyword::Dynamically" : "0",
             "perl" : "v5.20.0"
          }
       },
@@ -55,7 +53,6 @@
          "requires" : {
             "ExtUtils::MakeMaker" : "0",
             "File::Spec" : "0",
-            "Test2::MojoX" : "0",
             "Test2::V0" : "0",
             "Test::More" : "0",
             "perl" : "v5.20.0"
