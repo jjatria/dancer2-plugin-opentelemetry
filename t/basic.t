@@ -9,8 +9,6 @@ use OpenTelemetry -all;
 use OpenTelemetry::Constants -span;
 use OpenTelemetry::Trace::Tracer;
 
-use IO::Async;
-
 use experimental 'signatures';
 
 my $span;
