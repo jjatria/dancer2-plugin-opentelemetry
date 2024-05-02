@@ -1,7 +1,7 @@
 package Dancer2::Plugin::OpenTelemetry;
 # ABSTRACT: Use OpenTelemetry in your Dancer2 app
 
-our $VERSION = '0.002';
+our $VERSION = '0.003';
 
 use strict;
 use warnings;
