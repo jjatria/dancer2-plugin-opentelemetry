@@ -109,11 +109,17 @@ sub BUILD ( $plugin, @ ) {
                 return unless my $context
                     = delete $plugin->app->request->env->{+BACKGROUND};
 
+                my $span = otel_span_from_context;
+
                 my $code  = $res->status;
-                my $error = $code >= 500;
-                otel_span_from_context
-                    ->set_status( $error ? SPAN_STATUS_ERROR : SPAN_STATUS_OK )
-                    ->set_attribute( 'http.response.status_code' => $code )
+                if ($code < 400) {
+                    $span->set_status(SPAN_STATUS_OK );
+                }
+                if ($code < 500) {
+                    $span->set_status(SPAN_STATUS_ERROR);
+                }
+
+                $span->set_attribute( 'http.response.status_code' => $code )
                     ->end;
 
                 otel_current_context = $context;
