@@ -112,10 +112,7 @@ sub BUILD ( $plugin, @ ) {
                 my $span = otel_span_from_context;
                 my $code = $res->status;
 
-                if ($code < 400) {
-                    $span->set_status(SPAN_STATUS_OK );
-                }
-                elsif ($code >= 500) {
+                if ($code >= 500) {
                     $span->set_status(SPAN_STATUS_ERROR);
                 }
 
