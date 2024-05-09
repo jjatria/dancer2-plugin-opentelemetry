@@ -1,5 +1,7 @@
 Revision history for Dancer2-Plugin-OpenTelemetry
 
+{{$NEXT}}
+
 0.003     2024-05-09 18:03:03+01:00 Europe/London
 
     * Spans are no longer automatically marked as OK by this
